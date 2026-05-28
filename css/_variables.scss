@@ -1,0 +1,89 @@
+@use 'sass:list';
+
+$dark: (
+  'base': #24273a, 'mantle': #1e2030, 'crust': #181926,
+  'surface-0': #363a4f, 'surface-1': #494d64, 'surface-2': #5b6078,
+  'overlay-0': #6e738d, 'overlay-1': #8087a2, 'overlay-2': #939ab7,
+  'subtext-0': #a5adcb, 'subtext-1': #b8c0e0, 'text': #cad3f5,
+  'rosewater': #f4dbd6, 'flamingo': #f0c6c6, 'pink': #f5bde6,
+  'mauve': #c6a0f6, 'red': #ed8796, 'maroon': #ee99a0,
+  'peach': #f5a97f, 'yellow': #eed49f, 'green': #a6da95,
+  'teal': #8bd5ca, 'sky': #91d7e3, 'sapphire': #7dc4e4,
+  'blue': #8aadf4, 'lavender': #b7bdf8,
+);
+
+$light: (
+  'base': #eff1f5, 'mantle': #e6e9ef, 'crust': #dce0e8,
+  'surface-0': #ccd0da, 'surface-1': #bcc0cc, 'surface-2': #acb0be,
+  'overlay-0': #9ca0b0, 'overlay-1': #8c8fa1, 'overlay-2': #7c7f93,
+  'subtext-0': #6c6f85, 'subtext-1': #5c5f77, 'text': #4c4f69,
+  'rosewater': #dc8a78, 'flamingo': #dd7878, 'pink': #ea76cb,
+  'mauve': #8839ef, 'red': #d20f39, 'maroon': #e64553,
+  'peach': #fe640b, 'yellow': #df8e1d, 'green': #40a02b,
+  'teal': #179299, 'sky': #04a5e5, 'sapphire': #209fb5,
+  'blue': #1e66f5, 'lavender': #7287fd,
+);
+
+$semantic: (
+  'bg': (base, base), 'bg-alt': (mantle, mantle), 'bg-deeper': (crust, crust),
+  'border': (surface-0, surface-1),
+  'fg': (text, text), 'fg-muted': (subtext-0, subtext-0), 'fg-subtle': (overlay-1, overlay-1),
+  'accent': (blue, mauve), 'accent-alt': (blue, blue),
+  'link': (blue, blue), 'link-hover': (sky, sapphire),
+  'sidebar-bg': (mantle, mantle), 'sidebar-hover': (surface-0, crust),
+  'sidebar-active-bg': (surface-0, crust), 'sidebar-active-text': (blue, mauve),
+  'code-bg': (surface-0, crust), 'code-inline-bg': (surface-0, surface-0),
+  'callout-tip-border': (teal, teal), 'callout-note-border': (blue, blue),
+  'callout-warn-border': (yellow, yellow), 'callout-danger-border': (red, red),
+);
+
+$syntax: (
+  'keyword': (mauve, mauve), 'string': (green, green), 'function': (blue, blue),
+  'type': (yellow, yellow), 'comment': (overlay-1, overlay-1), 'number': (peach, peach),
+  'operator': (sky, teal), 'attr': (teal, sapphire), 'tag': (red, red),
+  'variable': (text, text),
+);
+
+:root, [data-theme="dark"] {
+  @each $k, $v in $dark { --#{$k}: #{$v}; }
+}
+
+[data-theme="light"] {
+  @each $k, $v in $light { --#{$k}: #{$v}; }
+}
+
+:root, [data-theme="dark"] {
+  @each $token, $refs in $semantic {
+    --#{$token}: var(--#{list.nth($refs, 1)});
+  }
+  @each $token, $refs in $syntax {
+    --syn-#{$token}: var(--#{list.nth($refs, 1)});
+  }
+}
+
+[data-theme="light"] {
+  @each $token, $refs in $semantic {
+    --#{$token}: var(--#{list.nth($refs, 2)});
+  }
+  @each $token, $refs in $syntax {
+    --syn-#{$token}: var(--#{list.nth($refs, 2)});
+  }
+}
+
+:root, [data-theme="dark"] {
+  --border-subtle: color-mix(in srgb, var(--surface-0) 60%, transparent);
+  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
+  --callout-tip-bg: color-mix(in srgb, var(--teal) 10%, var(--base));
+  --callout-note-bg: color-mix(in srgb, var(--blue) 10%, var(--base));
+  --callout-warn-bg: color-mix(in srgb, var(--yellow) 10%, var(--base));
+  --callout-danger-bg: color-mix(in srgb, var(--red) 10%, var(--base));
+}
+
+[data-theme="light"] {
+  --border-subtle: color-mix(in srgb, var(--surface-1) 60%, transparent);
+  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
+  --callout-tip-bg: color-mix(in srgb, var(--teal) 8%, var(--base));
+  --callout-note-bg: color-mix(in srgb, var(--blue) 8%, var(--base));
+  --callout-warn-bg: color-mix(in srgb, var(--yellow) 8%, var(--base));
+  --callout-danger-bg: color-mix(in srgb, var(--red) 8%, var(--base));
+}

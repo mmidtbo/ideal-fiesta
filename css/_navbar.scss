@@ -1,0 +1,98 @@
+.fl-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.fl-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  gap: 1rem;
+}
+
+.fl-logo-mark {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.fl-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1rem;
+  list-style: none;
+
+  a {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--fg-muted);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition:
+      color 0.15s,
+      background 0.15s;
+  }
+}
+
+.fl-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.fl-btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35.5px;
+  height: 35.5px;
+  padding: 0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: var(--fg);
+    background: var(--surface-0);
+    border-color: var(--overlay-0);
+  }
+}
+
+.fl-btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.3rem 0.65rem;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--fg-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: var(--fg);
+    background: var(--surface-0);
+    border-color: var(--overlay-0);
+  }
+}
