@@ -1,3 +1,157 @@
+:root,
+[data-theme="dark"] {
+  --base: #24273a;
+  --mantle: #1e2030;
+  --crust: #181926;
+  --surface-0: #363a4f;
+  --surface-1: #494d64;
+  --surface-2: #5b6078;
+  --overlay-0: #6e738d;
+  --overlay-1: #8087a2;
+  --overlay-2: #939ab7;
+  --subtext-0: #a5adcb;
+  --subtext-1: #b8c0e0;
+  --text: #cad3f5;
+  --rosewater: #f4dbd6;
+  --flamingo: #f0c6c6;
+  --pink: #f5bde6;
+  --mauve: #c6a0f6;
+  --red: #ed8796;
+  --maroon: #ee99a0;
+  --peach: #f5a97f;
+  --yellow: #eed49f;
+  --green: #a6da95;
+  --teal: #8bd5ca;
+  --sky: #91d7e3;
+  --sapphire: #7dc4e4;
+  --blue: #8aadf4;
+  --lavender: #b7bdf8;
+
+  /* semantic */
+  --bg: var(--base);
+  --bg-alt: var(--mantle);
+  --bg-deeper: var(--crust);
+  --border: var(--surface-0);
+  --border-subtle: color-mix(in srgb, var(--surface-0) 60%, transparent);
+  --fg: var(--text);
+  --fg-muted: var(--subtext-0);
+  --fg-subtle: var(--overlay-1);
+  --accent: var(--blue);
+  --accent-alt: var(--blue);
+  --link: var(--blue);
+  --link-hover: var(--sky);
+  --sidebar-bg: var(--mantle);
+  --sidebar-hover: var(--surface-0);
+  --sidebar-active-bg: var(--surface-0);
+  --sidebar-active-text: var(--blue);
+  --code-bg: var(--surface-0);
+  --code-inline-bg: var(--surface-0);
+  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
+  --callout-tip-bg: color-mix(in srgb, var(--teal) 10%, var(--base));
+  --callout-tip-border: var(--teal);
+  --callout-note-bg: color-mix(in srgb, var(--blue) 10%, var(--base));
+  --callout-note-border: var(--blue);
+  --callout-warn-bg: color-mix(in srgb, var(--yellow) 10%, var(--base));
+  --callout-warn-border: var(--yellow);
+  --callout-danger-bg: color-mix(in srgb, var(--red) 10%, var(--base));
+  --callout-danger-border: var(--red);
+
+  /* syntax */
+  --syn-keyword: var(--mauve);
+  --syn-string: var(--green);
+  --syn-function: var(--blue);
+  --syn-type: var(--yellow);
+  --syn-comment: var(--overlay-1);
+  --syn-number: var(--peach);
+  --syn-operator: var(--sky);
+  --syn-attr: var(--teal);
+  --syn-tag: var(--red);
+  --syn-variable: var(--text);
+}
+
+/* ── Catppuccin Latte (light) ────────────────────────────── */
+[data-theme="light"] {
+  --base: #eff1f5;
+  --mantle: #e6e9ef;
+  --crust: #dce0e8;
+  --surface-0: #ccd0da;
+  --surface-1: #bcc0cc;
+  --surface-2: #acb0be;
+  --overlay-0: #9ca0b0;
+  --overlay-1: #8c8fa1;
+  --overlay-2: #7c7f93;
+  --subtext-0: #6c6f85;
+  --subtext-1: #5c5f77;
+  --text: #4c4f69;
+  --rosewater: #dc8a78;
+  --flamingo: #dd7878;
+  --pink: #ea76cb;
+  --mauve: #8839ef;
+  --red: #d20f39;
+  --maroon: #e64553;
+  --peach: #fe640b;
+  --yellow: #df8e1d;
+  --green: #40a02b;
+  --teal: #179299;
+  --sky: #04a5e5;
+  --sapphire: #209fb5;
+  --blue: #1e66f5;
+  --lavender: #7287fd;
+
+  /* semantic overrides */
+  --bg: var(--base);
+  --bg-alt: var(--mantle);
+  --bg-deeper: var(--crust);
+  --border: var(--surface-1);
+  --border-subtle: color-mix(in srgb, var(--surface-1) 60%, transparent);
+  --fg: var(--text);
+  --fg-muted: var(--subtext-0);
+  --fg-subtle: var(--overlay-1);
+  --accent: var(--mauve);
+  --accent-alt: var(--blue);
+  --link: var(--blue);
+  --link-hover: var(--sapphire);
+  --sidebar-bg: var(--mantle);
+  --sidebar-hover: var(--crust);
+  --sidebar-active-bg: var(--crust);
+  --sidebar-active-text: var(--mauve);
+  --code-bg: var(--crust);
+  --code-inline-bg: var(--surface-0);
+  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
+  --callout-tip-bg: color-mix(in srgb, var(--teal) 8%, var(--base));
+  --callout-tip-border: var(--teal);
+  --callout-note-bg: color-mix(in srgb, var(--blue) 8%, var(--base));
+  --callout-note-border: var(--blue);
+  --callout-warn-bg: color-mix(in srgb, var(--yellow) 8%, var(--base));
+  --callout-warn-border: var(--yellow);
+  --callout-danger-bg: color-mix(in srgb, var(--red) 8%, var(--base));
+  --callout-danger-border: var(--red);
+
+  --syn-keyword: var(--mauve);
+  --syn-string: var(--green);
+  --syn-function: var(--blue);
+  --syn-type: var(--yellow);
+  --syn-comment: var(--overlay-1);
+  --syn-number: var(--peach);
+  --syn-operator: var(--teal);
+  --syn-attr: var(--sapphire);
+  --syn-tag: var(--red);
+  --syn-variable: var(--text);
+}
+
+body {
+  line-height: 24px;
+  font-family:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7em;
+  background-color: var(--bg);
+  color: var(--vp-c-text-1);
+  min-height: 100vh;
+}
+
 .fl-navbar {
   position: sticky;
   top: 0;
@@ -16,6 +170,12 @@
   margin: 0 auto;
   padding: 0 1.5rem;
   gap: 1rem;
+}
+
+.fl-logo-mark {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
 }
 
 .fl-nav-links {
