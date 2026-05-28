@@ -97,22 +97,3 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-
-.fl-copy-btn {
-  font-size: 0.75rem;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  color: var(--fg-muted);
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.2rem 0.6rem;
-  transition: all 0.15s;
-}
-
-.fl-copy-btn:hover {
-  color: var(--fg);
-  background: var(--surface-0);
-  border-color: var(--overlay-0);
-}
