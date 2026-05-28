@@ -1,0 +1,123 @@
+.fl-docs-preview {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.fl-docs-preview-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  background: var(--bg-deeper);
+  border-bottom: 1px solid var(--border);
+}
+
+.fl-docs-preview-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.fl-docs-preview-sidebar {
+  padding: 1rem;
+  border-right: 1px solid var(--border);
+  background: var(--bg);
+  font-size: 0.78rem;
+}
+.fl-docs-preview-sidebar .section-hd {
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  padding: 0.6rem 0.5rem 0.25rem;
+}
+.fl-docs-preview-sidebar .item.active {
+  background: var(--surface-0);
+  color: var(--accent);
+  font-weight: 500;
+}
+.fl-docs-preview-sidebar .item {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: var(--fg-subtle);
+  margin-bottom: 1px;
+  cursor: pointer;
+}
+
+.fl-docs-preview-main {
+  padding: 1.5rem;
+  overflow: hidden;
+}
+
+.fl-api-endpoint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.875rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.8rem;
+}
+
+.fl-method {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.fl-method {
+  border: 1px solid var(--border);
+}
+
+.fl-endpoint-path {
+  color: var(--fg-muted);
+  flex: 1;
+}
+.fl-endpoint-desc {
+  color: var(--fg-subtle);
+  font-size: 0.75rem;
+}
+
+.fl-table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+th {
+  text-align: left;
+  padding: 0.6rem 0.875rem;
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+td {
+  padding: 0.6rem 0.875rem;
+  color: var(--fg-muted);
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+code {
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.83em;
+  background: var(--code-inline-bg);
+  color: var(--fg-muted);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border);
+}

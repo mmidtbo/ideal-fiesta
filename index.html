@@ -253,6 +253,192 @@ app.get('/users/:id',
             </div>
           </div>
         </section>
+
+        <section id="features" class="fl-section fl-reveal">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Features</p>
+            <h2 class="fl-section-title">
+              Everything you need. Nothing extra.
+            </h2>
+          </div>
+
+          <div class="fl-feature-grid">
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">⚡</div>
+              <div class="fl-feature-name">Fluent Integration</div>
+              <div class="fl-feature-desc">
+                Chain documentation alongside your route definitions. No context
+                switching.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🦊</div>
+              <div class="fl-feature-name">Hono Native</div>
+              <div class="fl-feature-desc">
+                Built specifically for Hono's router and middleware system.
+                Feels native.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">📄</div>
+              <div class="fl-feature-name">Auto OpenAPI</div>
+              <div class="fl-feature-desc">
+                OpenAPI 3.1 spec generated automatically from your route
+                annotations.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">✂</div>
+              <div class="fl-feature-name">Zero Boilerplate</div>
+              <div class="fl-feature-desc">
+                No registry setup, no schema conversion, no separate docs mount.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">◈</div>
+              <div class="fl-feature-name">Scalar Ready</div>
+              <div class="fl-feature-desc">
+                Ships with first-class Scalar UI integration. Drop-in, beautiful
+                docs.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🔷</div>
+              <div class="fl-feature-name">Type Safe</div>
+              <div class="fl-feature-desc">
+                Full TypeScript support with inferred types from Zod schemas.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🔌</div>
+              <div class="fl-feature-name">Plug &amp; Play</div>
+              <div class="fl-feature-desc">
+                One middleware call is all you need. Works with existing Hono
+                projects.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">☁</div>
+              <div class="fl-feature-name">Lightweight</div>
+              <div class="fl-feature-desc">
+                Minimal runtime footprint. No heavy dependencies or bundled docs
+                UI bloat.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="documentation-preview" class="fl-section fl-reveal">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Documentation Preview</p>
+            <h2 class="fl-section-title">
+              Beautifully generated API reference
+            </h2>
+            <p class="fl-section-desc">
+              Fluenth generates a fully interactive API reference at
+              <code>/docs</code>
+            </p>
+          </div>
+
+          <div class="fl-docs-preview">
+            <div class="fl-docs-preview-bar">
+              <span class="fl-dot fl-dot-r"></span>
+              <span class="fl-dot fl-dot-y"></span>
+              <span class="fl-dot fl-dot-g"></span>
+              <span class="fl-docs-preview-title"
+                >My API — Scalar UI &nbsp;/docs</span
+              >
+            </div>
+            <div class="fl-docs-preview-body">
+              <div class="fl-docs-preview-sidebar">
+                <div class="section-hd">Endpoints</div>
+                <div class="item active">Users</div>
+                <div class="item">Posts</div>
+                <div class="item">Auth</div>
+                <div class="section-hd">Reference</div>
+                <div class="item">Schemas</div>
+                <div class="item">Security</div>
+              </div>
+              <div class="fl-docs-preview-main">
+                <div style="margin-bottom: 1rem">
+                  <span
+                    style="
+                      font-size: 1.05rem;
+                      font-weight: 600;
+                      color: var(--fg);
+                    "
+                    >Users</span
+                  >
+                  <span class="fl-badge green" style="margin-left: 0.5rem"
+                    >3 endpoints</span
+                  >
+                </div>
+
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">GET</span>
+                  <span class="fl-endpoint-path">/users</span>
+                  <span class="fl-endpoint-desc"
+                    >List all users with pagination</span
+                  >
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">GET</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc">Get a single user by ID</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">POST</span>
+                  <span class="fl-endpoint-path">/users</span>
+                  <span class="fl-endpoint-desc">Create a new user</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">PUT</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc">Update an existing user</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">DELETE</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc"
+                    >Delete a user permanently</span
+                  >
+                </div>
+
+                <div style="margin-top: 1.25rem">
+                  <div class="fl-table-wrap">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>In</th>
+                          <th>Type</th>
+                          <th>Required</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>id</code></td>
+                          <td><span class="fl-badge blue">path</span></td>
+                          <td><code>string</code></td>
+                          <td><span class="fl-badge green">yes</span></td>
+                          <td>User UUID</td>
+                        </tr>
+                        <tr>
+                          <td><code>include</code></td>
+                          <td><span class="fl-badge mauve">query</span></td>
+                          <td><code>string[]</code></td>
+                          <td><span class="fl-badge yellow">no</span></td>
+                          <td>Relations to include</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
 
