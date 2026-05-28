@@ -1,0 +1,78 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  --bs-btn-font-size: 0.82rem;
+  --bs-btn-font-weight: 500;
+  --bs-btn-border-radius: 6px;
+  --bs-btn-color: var(--fg-muted);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--border);
+  --bs-btn-hover-color: var(--fg);
+  --bs-btn-hover-bg: var(--surface-0);
+  --bs-btn-hover-border-color: var(--overlay-0);
+  --bs-btn-active-color: var(--fg);
+  --bs-btn-active-bg: var(--blue);
+  --bs-btn-active-border-color: var(--overlay-0);
+  --bs-btn-disabled-color: var(--overlay-0);
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: var(--surface-0);
+}
+
+.btn-primary {
+  --bs-btn-color: var(--crust);
+  --bs-btn-bg: var(--blue);
+  --bs-btn-border-color: var(--blue);
+  --bs-btn-hover-color: var(--crust);
+  --bs-btn-hover-bg: var(--sapphire);
+  --bs-btn-hover-border-color: var(--sapphire);
+  --bs-btn-active-color: var(--crust);
+  --bs-btn-active-bg: var(--sapphire);
+  --bs-btn-active-border-color: var(--sapphire);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--blue);
+  --bs-btn-border-color: var(--blue);
+  --bs-btn-hover-color: var(--crust);
+  --bs-btn-hover-bg: var(--blue);
+  --bs-btn-hover-border-color: var(--blue);
+  --bs-btn-active-color: var(--crust);
+  --bs-btn-active-bg: var(--blue);
+  --bs-btn-active-border-color: var(--blue);
+}
+
+.btn-secondary {
+  --bs-btn-color: var(--fg);
+  --bs-btn-bg: var(--surface-1);
+  --bs-btn-border-color: var(--surface-1);
+  --bs-btn-hover-color: var(--fg);
+  --bs-btn-hover-bg: var(--surface-2);
+  --bs-btn-hover-border-color: var(--surface-2);
+  --bs-btn-active-color: var(--fg);
+  --bs-btn-active-bg: var(--surface-2);
+  --bs-btn-active-border-color: var(--surface-2);
+}
+
+.btn-outline-secondary {
+  --bs-btn-color: var(--fg-muted);
+  --bs-btn-border-color: var(--border);
+  --bs-btn-hover-color: var(--fg);
+  --bs-btn-hover-bg: var(--surface-0);
+  --bs-btn-hover-border-color: var(--overlay-0);
+  --bs-btn-active-color: var(--fg);
+  --bs-btn-active-bg: var(--surface-1);
+  --bs-btn-active-border-color: var(--overlay-0);
+}
+
+.btn-outline-light {
+  --bs-btn-color: var(--fg-muted);
+  --bs-btn-border-color: var(--border);
+  --bs-btn-hover-color: var(--fg);
+  --bs-btn-hover-bg: var(--surface-0);
+  --bs-btn-hover-border-color: var(--overlay-0);
+  --bs-btn-active-color: var(--fg);
+  --bs-btn-active-bg: var(--surface-1);
+  --bs-btn-active-border-color: var(--overlay-0);
+}
