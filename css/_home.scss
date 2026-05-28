@@ -39,6 +39,15 @@
   margin-bottom: 1.25rem;
 }
 
+.fl-hero-title span {
+  color: var(--accent);
+}
+
+.hero-logo {
+  width: 150px;
+  height: auto;
+}
+
 .fl-hero-sub {
   font-size: 1.05rem;
   color: var(--fg-muted);
