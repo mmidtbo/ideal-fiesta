@@ -5,6 +5,8 @@
   height: 56px;
   display: flex;
   align-items: center;
+  backdrop-filter: blur(12px);
+  background: var(--navbar-bg);
 }
 
 .fl-navbar-inner {
