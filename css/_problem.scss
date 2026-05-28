@@ -1,0 +1,66 @@
+.fl-section {
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.fl-section:last-child {
+  border-bottom: none;
+}
+
+.fl-section-header {
+  margin-bottom: 2.5rem;
+}
+
+.fl-section-label {
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.fl-section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--fg);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.fl-section-desc {
+  color: var(--fg-muted);
+  font-size: 1.05rem;
+  max-width: 520px;
+}
+
+.fl-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  margin-bottom: 2rem;
+}
+
+.fl-flow-node {
+  background: var(--surface-0);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.6rem 1rem;
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.fl-flow-arrow {
+  padding: 0 0.5rem;
+  color: var(--overlay-0);
+  font-size: 0.85rem;
+}
+
+.fl-flow-node.accent {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+}

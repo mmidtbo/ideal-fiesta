@@ -49,7 +49,7 @@
 
     <main>
       <div class="fl-home">
-        <section class="fl-hero">
+        <section id="main" class="fl-hero">
           <div class="fl-hero-left">
             <div class="fl-hero-eyebrow">
               <svg
@@ -64,7 +64,7 @@
             </div>
 
             <h1 class="fl-hero-title">
-              <img src="./assets/logo.svg" alt="logo" />
+              <img src="./assets/logo.svg" alt="logo" class="hero-logo" />
               API Docs<br />
               for <span>Hono</span>
             </h1>
@@ -130,6 +130,65 @@ app.use(fluenth({
   version: '1.0.0'
 }))
 </code></pre>
+          </div>
+        </section>
+
+        <section id="problem" class="fl-section fl-reveal">
+          <div class="fl-section-header">
+            <p class="fl-section-label">The problem</p>
+            <h2 class="fl-section-title">OpenAPI in Hono is repetitive</h2>
+            <p class="fl-section-desc">
+              Every project ends up with the same fragmented, verbose setup.
+              Fluenth collapses the pipeline.
+            </p>
+          </div>
+
+          <p
+            style="
+              font-family: &quot;Maple Mono NF&quot;, monospace;
+              font-size: 0.72rem;
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+              color: var(--fg-subtle);
+              margin-bottom: 0.6rem;
+            "
+          >
+            Without Fluenth
+          </p>
+          <div class="fl-flow" style="margin-bottom: 1.75rem">
+            <div class="fl-flow-node">Zod Validation</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">OpenAPI Schema</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Route Definition</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Docs Generator</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Scalar / Swagger</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Manual sync</div>
+          </div>
+
+          <p
+            style="
+              font-family: &quot;Maple Mono NF&quot;, monospace;
+              font-size: 0.72rem;
+              letter-spacing: 0.07em;
+              text-transform: uppercase;
+              color: var(--fg-subtle);
+              margin-bottom: 0.6rem;
+            "
+          >
+            With Fluenth
+          </p>
+          <div class="fl-flow">
+            <div class="fl-flow-node accent">fluenth()</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node accent">
+              Validation + Schema + Routes + Docs
+            </div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node accent">Auto docs at /docs</div>
           </div>
         </section>
       </div>
