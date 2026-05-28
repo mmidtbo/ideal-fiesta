@@ -64,3 +64,34 @@
   color: var(--accent);
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
 }
+
+.fl-prob-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.fl-prob-card {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.fl-prob-label {
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.fl-prob-card.before .fl-prob-label {
+  color: var(--red);
+}
+.fl-prob-card.after .fl-prob-label {
+  color: var(--green);
+}

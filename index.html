@@ -190,6 +190,68 @@ app.use(fluenth({
             <span class="fl-flow-arrow">→</span>
             <div class="fl-flow-node accent">Auto docs at /docs</div>
           </div>
+
+          <div class="fl-prob-grid" style="margin-top: 2.5rem">
+            <div class="fl-prob-card before">
+              <div class="fl-prob-label">Before</div>
+              <div class="fl-code-block" style="margin: 0">
+                <pre
+                  style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+                ><code class="language-typescript">import { Hono } from 'hono'
+import { zValidator } from '@hono/zod-validator'
+import { OpenAPIRegistry, OpenApiGeneratorV31 } from 'zod-openapi'
+import { swaggerUI } from '@hono/swagger-ui'
+import { z } from 'zod'
+
+const registry = new OpenAPIRegistry()
+const UserSchema = z.object(
+  { id: z.string(), name: z.string() }
+)
+registry.register('User', UserSchema)
+registry.registerPath({ ...verbose config... })
+
+
+const app = new Hono()
+app.get('/users/:id',
+  zValidator('param', schema),
+  (c) =&gt c.json({ id: '1', name: 'Ada' }))
+
+app.get('/openapi.json', (c) =&gt c.json(...))
+app.get('/docs', swaggerUI({ url: '/openapi.json' }))
+                </code></pre>
+              </div>
+            </div>
+            <div class="fl-prob-card after">
+              <div class="fl-prob-label">With Fluenth</div>
+              <div class="fl-code-block" style="margin: 0">
+                <pre
+                  style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+                ><code class="language-typescript">import { Hono } from 'hono'
+import { fluenth, route } from 'fluenth'
+import { z } from 'zod'
+
+const app = new Hono()
+
+app.use(fluenth({
+  title: 'API',
+  version: '1.0.0'
+}))
+
+app.get('/users/:id',
+  route()
+    .params(z.object({ id: z.string() }))
+    .response(z.object({
+      id: z.string(),
+      name: z.string()
+    })),
+  (c) =&gt c.json({ id: '1', name: 'Ada' })
+)
+
+// → /docs   → /openapi.json
+// auto-generated, type-safe, zero glue ✨</code></pre>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
     </main>
