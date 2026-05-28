@@ -342,9 +342,6 @@ app.get('/users/:id',
 
           <div class="fl-docs-preview">
             <div class="fl-docs-preview-bar">
-              <span class="fl-dot fl-dot-r"></span>
-              <span class="fl-dot fl-dot-y"></span>
-              <span class="fl-dot fl-dot-g"></span>
               <span class="fl-docs-preview-title"
                 >My API — Scalar UI &nbsp;/docs</span
               >
@@ -433,6 +430,112 @@ app.get('/users/:id',
                         </tr>
                       </tbody>
                     </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="installation" class="fl-section fl-reveal">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Installation</p>
+            <h2 class="fl-section-title">Get started in minutes</h2>
+          </div>
+
+          <div class="fl-install-grid">
+            <div>
+              <p
+                style="
+                  font-size: 0.85rem;
+                  color: var(--fg-subtle);
+                  margin-bottom: 1rem;
+                  font-family: &quot;Maple Mono NF&quot;, monospace;
+                  text-transform: uppercase;
+                  letter-spacing: 0.06em;
+                "
+              >
+                Install
+              </p>
+              <div class="fl-terminal">
+                <div class="fl-terminal-bar">
+                  <button
+                    class="btn btn-outline-light btn-sm"
+                    style="margin-left: auto"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <div class="fl-terminal-body">
+                  <div>
+                    <span class="prompt">$ </span
+                    ><span class="cmd">npm install fluenth</span>
+                  </div>
+                  <div class="output">&nbsp;</div>
+                  <div class="output">added 3 packages in 1.2s</div>
+                  <div class="output">3 packages are looking for funding</div>
+                  <div class="output">&nbsp;</div>
+                  <div>
+                    <span class="prompt">$ </span
+                    ><span class="cmd">npx fluenth init</span>
+                  </div>
+                  <div class="output">&nbsp;</div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ fluenth.config.ts created
+                  </div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ OpenAPI spec configured
+                  </div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ Scalar UI enabled at /docs
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  margin-top: 0.5rem;
+                  display: flex;
+                  gap: 0.5rem;
+                  flex-wrap: wrap;
+                "
+              >
+                <div class="fl-terminal" style="flex: 1; min-width: 160px">
+                  <div class="fl-terminal-bar" style="padding: 0.4rem 0.8rem">
+                    <span
+                      style="
+                        font-family: &quot;Maple Mono NF&quot;, monospace;
+                        font-size: 0.68rem;
+                        color: var(--fg-subtle);
+                      "
+                      >pnpm</span
+                    >
+                  </div>
+                  <div
+                    class="fl-terminal-body"
+                    style="padding: 0.6rem 0.8rem; font-size: 0.8rem"
+                  >
+                    <span class="prompt">$ </span
+                    ><span class="cmd">pnpm add fluenth</span>
+                  </div>
+                </div>
+                <div class="fl-terminal" style="flex: 1; min-width: 160px">
+                  <div class="fl-terminal-bar" style="padding: 0.4rem 0.8rem">
+                    <span
+                      style="
+                        font-family: &quot;Maple Mono NF&quot;, monospace;
+                        font-size: 0.68rem;
+                        color: var(--fg-subtle);
+                      "
+                      >bun</span
+                    >
+                  </div>
+                  <div
+                    class="fl-terminal-body"
+                    style="padding: 0.6rem 0.8rem; font-size: 0.8rem"
+                  >
+                    <span class="prompt">$ </span
+                    ><span class="cmd">bun add fluenth</span>
                   </div>
                 </div>
               </div>

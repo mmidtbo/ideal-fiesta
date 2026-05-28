@@ -1,0 +1,36 @@
+.fl-terminal {
+  background: var(--crust);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.25rem 0;
+}
+
+.fl-terminal-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.fl-terminal-body {
+  padding: 1rem 1.25rem;
+  font-family: "Maple Mono NF", monospace;
+  font-size: 0.84rem;
+  line-height: 1.8;
+  color: var(--subtext-1);
+}
+
+.fl-terminal-body .output {
+  color: var(--subtext-0);
+}
+
+.fl-terminal-body .prompt {
+  color: var(--green);
+}
+
+.fl-terminal-body .cmd {
+  color: var(--text);
+}
