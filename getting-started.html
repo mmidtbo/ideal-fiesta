@@ -7,8 +7,10 @@
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
     <link href="css/style.min.css" rel="stylesheet" />
   </head>
@@ -26,11 +28,11 @@
         </ul>
         <div class="fl-nav-right d-flex align-items-center flex-shrink-0 gap-2">
           <button
-            class="btn btn-outline-light btn-sm"
             id="themeToggle"
-            title="Toggle theme"
+            type="button"
+            class="btn btn-outline-light btn-sm"
           >
-            ☀
+            <i class="bi bi-sunrise-fill"></i>
           </button>
           <a
             href="https://github.com"
@@ -316,5 +318,7 @@ app.get('/users/:id',
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="module" src="script/app-jsdom.js"></script>
   </body>
 </html>
