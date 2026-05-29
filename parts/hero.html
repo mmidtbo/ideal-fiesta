@@ -1,0 +1,54 @@
+<section id="main" class="fl-hero">
+  <div class="fl-hero-left">
+    <h1 class="fl-hero-title">
+      <img src="./assets/logo.svg" alt="logo" class="hero-logo" />
+      API Docs<br />
+      for <span>Hono</span>
+    </h1>
+
+    <p class="fl-hero-sub">
+      Build OpenAPI Documentation in Hono without complicated pipelines. Import,
+      use, and your docs are automatically available.
+    </p>
+
+    <div>
+      <a href="getting-started.html" class="btn btn-primary">
+        Get started
+        <i class="bi bi-arrow-right"></i>
+      </a>
+      <a href="installation.html" class="btn btn-outline-light">
+        Installation
+      </a>
+      <a
+        href="https://github.com"
+        class="btn btn-outline-light"
+        target="_blank"
+        rel="noopener"
+      >
+        <i class="bi bi-github"></i>
+        View on GitHub
+      </a>
+    </div>
+  </div>
+  <div class="fl-code-block fl-code-block--hero">
+    <div
+      class="fl-code-header d-flex align-items-center justify-content-between"
+    >
+      <span class="fl-code-filename">app.ts</span>
+      <div class="d-flex align-items-center gap-2">
+        <span class="fl-code-lang">typescript</span>
+        <button class="btn btn-outline-light btn-sm">Copy</button>
+      </div>
+    </div>
+    <pre><code>import { Hono } from 'hono'
+import { fluenth } from 'fluenth'
+
+const app = new Hono()
+
+// Mount Fluenth — docs auto-available
+app.use(fluenth({
+  title: 'My API',
+  version: '1.0.0'
+}))</code></pre>
+  </div>
+</section>

@@ -1,0 +1,121 @@
+<section id="problem" class="fl-section">
+  <div class="fl-section-header">
+    <p class="fl-section-label">The problem</p>
+    <h2 class="fl-section-title">OpenAPI in Hono is repetitive</h2>
+    <p class="fl-section-desc">
+      Every project ends up with the same fragmented, verbose setup. Fluenth
+      collapses the pipeline.
+    </p>
+  </div>
+
+  <p
+    class="text-uppercase"
+    style="
+      font-family: &quot;Maple Mono NF&quot;, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      color: var(--fg-subtle);
+      margin-bottom: 0.6rem;
+    "
+  >
+    Without Fluenth
+  </p>
+  <div
+    class="fl-flow d-flex align-items-center flex-wrap"
+    style="margin-bottom: 1.75rem"
+  >
+    <div class="fl-flow-node">Zod Validation</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node">OpenAPI Schema</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node">Route Definition</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node">Docs Generator</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node">Scalar / Swagger</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node">Manual sync</div>
+  </div>
+
+  <p
+    class="text-uppercase"
+    style="
+      font-family: &quot;Maple Mono NF&quot;, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.07em;
+      color: var(--fg-subtle);
+      margin-bottom: 0.6rem;
+    "
+  >
+    With Fluenth
+  </p>
+  <div class="fl-flow d-flex align-items-center flex-wrap">
+    <div class="fl-flow-node accent">fluenth()</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node accent">Validation + Schema + Routes + Docs</div>
+    <span class="fl-flow-arrow">→</span>
+    <div class="fl-flow-node accent">Auto docs at /docs</div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-lg-2 g-3 mt-5">
+    <div class="col">
+      <div class="fl-prob-card before p-3">
+        <div class="fl-prob-label">Before</div>
+        <div class="fl-code-block" style="margin: 0">
+          <pre
+            style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+          ><code>import { Hono } from 'hono'
+import { zValidator } from '@hono/zod-validator'
+import { OpenAPIRegistry, OpenApiGeneratorV31 } from 'zod-openapi'
+import { swaggerUI } from '@hono/swagger-ui'
+import { z } from 'zod'
+
+const registry = new OpenAPIRegistry()
+const UserSchema = z.object(
+  { id: z.string(), name: z.string() }
+)
+registry.register('User', UserSchema)
+registry.registerPath({ ...verbose config... })
+
+const app = new Hono()
+app.get('/users/:id',
+  zValidator('param', schema),
+  (c) =&gt; c.json({ id: '1', name: 'Ada' }))
+
+app.get('/openapi.json', (c) =&gt; c.json(...))
+app.get('/docs', swaggerUI({ url: '/openapi.json' }))</code></pre>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="fl-prob-card after p-3">
+        <div class="fl-prob-label">With Fluenth</div>
+        <div class="fl-code-block" style="margin: 0">
+          <pre
+            style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+          ><code>import { Hono } from 'hono'
+import { fluenth, route } from 'fluenth'
+import { z } from 'zod'
+
+const app = new Hono()
+
+app.use(fluenth({
+  title: 'API',
+  version: '1.0.0'
+}))
+
+app.get('/users/:id',
+  route()
+    .params(z.object({ id: z.string() }))
+    .response(z.object({
+      id: z.string(),
+      name: z.string()
+    })),
+  (c) =&gt; c.json({ id: '1', name: 'Ada' })
+)
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
