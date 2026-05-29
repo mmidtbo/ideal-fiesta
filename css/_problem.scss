@@ -35,10 +35,6 @@
 }
 
 .fl-flow {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  flex-wrap: wrap;
   margin: 2rem 0;
   margin-bottom: 2rem;
 }
@@ -65,18 +61,10 @@
   border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
 }
 
-.fl-prob-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
 .fl-prob-card {
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1.25rem;
 }
 
 .fl-prob-label {

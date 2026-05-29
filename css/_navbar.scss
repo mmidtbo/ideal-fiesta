@@ -3,20 +3,12 @@
   top: 0;
   z-index: 200;
   height: 56px;
-  display: flex;
-  align-items: center;
   background: var(--bg-alt);
 }
 
 .fl-navbar-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
   padding: 0 1.5rem;
-  gap: 1rem;
 }
 
 .fl-logo-mark {
@@ -26,11 +18,11 @@
 }
 
 .fl-nav-links {
+  list-style: none;
   display: flex;
   align-items: center;
   gap: 0.25rem;
   margin-top: 1rem;
-  list-style: none;
 }
 
 .fl-nav-links a {
@@ -40,11 +32,4 @@
   padding: 0.35rem 0.75rem;
   border-radius: 6px;
   text-decoration: none;
-}
-
-.fl-nav-right {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0;
 }

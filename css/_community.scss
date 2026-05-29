@@ -1,18 +1,8 @@
-.fl-community-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-}
-
 .fl-community-card {
   background: var(--bg-alt);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 1.5rem;
-  text-decoration: none;
   transition: all 0.15s;
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
 }
 

@@ -9,14 +9,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .fl-prob-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .fl-community-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .fl-docs-preview-body {
     grid-template-columns: 1fr;
   }
@@ -31,23 +23,8 @@
     display: none;
   }
 
-  .fl-footer-inner {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
   .fl-feature-grid {
     grid-template-columns: 1fr;
-  }
-
-  .fl-community-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .fl-footer-bottom {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
   }
 
   .fl-hero-title {

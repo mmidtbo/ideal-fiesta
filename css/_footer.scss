@@ -8,16 +8,13 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2rem;
 }
 
 .fl-footer-brand p {
   font-size: 0.82rem;
   color: var(--fg-subtle);
   line-height: 1.6;
-  margin-top: 1rem;
+
 }
 
 .fl-footer-col h4 {
@@ -30,10 +27,7 @@
   margin-bottom: 0.75rem;
 }
 
-.fl-footer-col ul {
-  list-style: none;
-  padding-left: 0rem;
-}
+
 
 .fl-footer-col li {
   margin-bottom: 0.4rem;
@@ -47,13 +41,9 @@
 .fl-footer-bottom {
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 0px;
   padding: 1.25rem 1.5rem 0;
   border-top: 1px solid var(--border);
   margin-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   font-size: 0.78rem;
   color: var(--fg-subtle);
 }
