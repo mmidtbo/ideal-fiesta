@@ -1,7 +1,22 @@
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+code {
+  font-family: 'Maple Mono NF', Consolas, 'Courier New', monospace;
+  font-size: 0.83em;
+  background: var(--surface-0);
+  color: var(--fg-muted);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  border: 1px solid var(--border);
+}
+
 body {
   font-family:
-    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-size: 16px;
   font-weight: 400;
   line-height: 1.7em;

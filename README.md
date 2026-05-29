@@ -26,6 +26,53 @@ Meskipun disajikan dalam format dokumentasi teknis, website ini memenuhi ketentu
 
 ---
 
+## Arsitektur
+
+Project ini bertransisi dari **monolith** ke **modular** seiring growth halaman utama.
+
+### Monolith → Modular
+
+| Pendekatan             | File                           | Baris       | Cara Kerja                         |
+| ---------------------- | ------------------------------ | ----------- | ---------------------------------- |
+| **Monolith** (legacy)  | `monolith/index-monolith.html` | ~698        | Semua section dalam satu file HTML |
+| **Modular** (sekarang) | `index.html` + `parts/*.html`  | ~46 (shell) | Partial di-load via `fetch()`      |
+
+---
+
+### Modular
+
+`index.html` hanya berisi placeholder:
+
+```html
+<div id="navbar"></div>
+<div id="hero"></div>
+<div id="problem"></div>
+<!-- ... -->
+<div id="footer"></div>
+<script src="script/include.js"></script>
+```
+
+`script/include.js` membaca tiap partial dan menyuntikkan ke DOM:
+
+```js
+async function loadComponent(id, file) {
+  const el = document.getElementById(id);
+  const res = await fetch(file);
+  el.innerHTML = await res.text();
+}
+loadComponent("navbar", "parts/navbar.html");
+loadComponent("hero", "parts/hero.html");
+// ...
+```
+
+Keuntungan:
+
+- Setiap section bisa diedit lebih mudah karena file file nya kecil
+
+> **Catatan:** `monolith/` tetap dipertahankan sebagai arsip/cadangan. Semua pengembangan baru dilakukan di `index.html` + `parts/`.
+
+---
+
 ## Referensi Desain
 
 Website ini dikembangkan dengan mempelajari dan mengadaptasi pola desain dari:

@@ -45,26 +45,7 @@
   --sidebar-active-text: var(--blue);
   --code-bg: var(--surface-0);
   --code-inline-bg: var(--surface-0);
-  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
-  --callout-tip-bg: color-mix(in srgb, var(--teal) 10%, var(--base));
-  --callout-tip-border: var(--teal);
-  --callout-note-bg: color-mix(in srgb, var(--blue) 10%, var(--base));
-  --callout-note-border: var(--blue);
-  --callout-warn-bg: color-mix(in srgb, var(--yellow) 10%, var(--base));
-  --callout-warn-border: var(--yellow);
-  --callout-danger-bg: color-mix(in srgb, var(--red) 10%, var(--base));
-  --callout-danger-border: var(--red);
 
-  --syn-keyword: var(--mauve);
-  --syn-string: var(--green);
-  --syn-function: var(--blue);
-  --syn-type: var(--yellow);
-  --syn-comment: var(--overlay-1);
-  --syn-number: var(--peach);
-  --syn-operator: var(--sky);
-  --syn-attr: var(--teal);
-  --syn-tag: var(--red);
-  --syn-variable: var(--text);
 }
 
 [data-theme="light"] {
@@ -113,24 +94,5 @@
   --sidebar-active-text: var(--mauve);
   --code-bg: var(--crust);
   --code-inline-bg: var(--surface-0);
-  --navbar-bg: color-mix(in srgb, var(--mantle) 95%, transparent);
-  --callout-tip-bg: color-mix(in srgb, var(--teal) 8%, var(--base));
-  --callout-tip-border: var(--teal);
-  --callout-note-bg: color-mix(in srgb, var(--blue) 8%, var(--base));
-  --callout-note-border: var(--blue);
-  --callout-warn-bg: color-mix(in srgb, var(--yellow) 8%, var(--base));
-  --callout-warn-border: var(--yellow);
-  --callout-danger-bg: color-mix(in srgb, var(--red) 8%, var(--base));
-  --callout-danger-border: var(--red);
 
-  --syn-keyword: var(--mauve);
-  --syn-string: var(--green);
-  --syn-function: var(--blue);
-  --syn-type: var(--yellow);
-  --syn-comment: var(--overlay-1);
-  --syn-number: var(--peach);
-  --syn-operator: var(--teal);
-  --syn-attr: var(--sapphire);
-  --syn-tag: var(--red);
-  --syn-variable: var(--text);
 }

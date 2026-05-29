@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fleunth - Fleunth API Docs for Hono</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link href="css/style.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="fl-navbar d-flex align-items-center">
+      <div
+        class="fl-navbar-inner d-flex align-items-center justify-content-between w-100 mx-auto gap-3"
+      >
+        <a href="index.html">
+          <img src="./assets/logo.svg" alt="logo" class="fl-logo-mark" />
+        </a>
+
+        <ul class="fl-nav-links gap-1 m-0">
+          <li><a href="getting-started.html">Docs</a></li>
+          <li><a href="#main">Home</a></li>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#documentation-preview">Doc Preview</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+
+        <div class="fl-nav-right d-flex align-items-center flex-shrink-0 gap-2">
+          <button type="button" class="btn btn-outline-light btn-sm">☀</button>
+          <a
+            href="https://github.com"
+            class="btn btn-outline-light btn-sm"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="bi bi-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="fl-home">
+        <section id="main" class="fl-hero">
+          <div class="fl-hero-left">
+            <h1 class="fl-hero-title">
+              <img src="./assets/logo.svg" alt="logo" class="hero-logo" />
+              API Docs<br />
+              for <span>Hono</span>
+            </h1>
+
+            <p class="fl-hero-sub">
+              Build OpenAPI Documentation in Hono without complicated pipelines.
+              Import, use, and your docs are automatically available.
+            </p>
+
+            <div>
+              <a href="getting-started.html" class="btn btn-primary">
+                Get started
+                  <i class="bi bi-arrow-right"></i>
+              </a>
+              <a href="installation.html" class="btn btn-outline-light">
+                Installation
+              </a>
+              <a
+                href="https://github.com"
+                class="btn btn-outline-light"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg
+                  width="13"
+                  height="13"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+            <i class="bi bi-github"></i>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="fl-code-block fl-code-block--hero">
+            <div
+              class="fl-code-header d-flex align-items-center justify-content-between"
+            >
+              <span class="fl-code-filename">app.ts</span>
+              <div class="d-flex align-items-center gap-2">
+                <span class="fl-code-lang">typescript</span>
+                <button class="btn btn-outline-light btn-sm">Copy</button>
+              </div>
+            </div>
+            <pre><code>import { Hono } from 'hono'
+import { fluenth } from 'fluenth'
+
+const app = new Hono()
+
+// Mount Fluenth — docs auto-available
+app.use(fluenth({
+  title: 'My API',
+  version: '1.0.0'
+}))
+</code></pre>
+          </div>
+        </section>
+
+        <section id="problem" class="fl-section">
+          <div class="fl-section-header">
+            <p class="fl-section-label">The problem</p>
+            <h2 class="fl-section-title">OpenAPI in Hono is repetitive</h2>
+            <p class="fl-section-desc">
+              Every project ends up with the same fragmented, verbose setup.
+              Fluenth collapses the pipeline.
+            </p>
+          </div>
+
+          <p
+            class="text-uppercase"
+            style="
+              font-family: &quot;Maple Mono NF&quot;, monospace;
+              font-size: 0.72rem;
+              letter-spacing: 0.07em;
+              color: var(--fg-subtle);
+              margin-bottom: 0.6rem;
+            "
+          >
+            Without Fluenth
+          </p>
+          <div
+            class="fl-flow d-flex align-items-center flex-wrap"
+            style="margin-bottom: 1.75rem"
+          >
+            <div class="fl-flow-node">Zod Validation</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">OpenAPI Schema</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Route Definition</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Docs Generator</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Scalar / Swagger</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node">Manual sync</div>
+          </div>
+
+          <p
+            class="text-uppercase"
+            style="
+              font-family: &quot;Maple Mono NF&quot;, monospace;
+              font-size: 0.72rem;
+              letter-spacing: 0.07em;
+              color: var(--fg-subtle);
+              margin-bottom: 0.6rem;
+            "
+          >
+            With Fluenth
+          </p>
+          <div class="fl-flow d-flex align-items-center flex-wrap">
+            <div class="fl-flow-node accent">fluenth()</div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node accent">
+              Validation + Schema + Routes + Docs
+            </div>
+            <span class="fl-flow-arrow">→</span>
+            <div class="fl-flow-node accent">Auto docs at /docs</div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-lg-2 g-1 mt-5">
+            <div class="col">
+              <div class="fl-prob-card before p-3">
+                <div class="fl-prob-label">Before</div>
+                <div class="fl-code-block" style="margin: 0">
+                  <pre
+                    style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+                  ><code>import { Hono } from 'hono'
+import { zValidator } from '@hono/zod-validator'
+import { OpenAPIRegistry, OpenApiGeneratorV31 } from 'zod-openapi'
+import { swaggerUI } from '@hono/swagger-ui'
+import { z } from 'zod'
+
+const registry = new OpenAPIRegistry()
+const UserSchema = z.object(
+  { id: z.string(), name: z.string() }
+)
+registry.register('User', UserSchema)
+registry.registerPath({ ...verbose config... })
+
+
+const app = new Hono()
+app.get('/users/:id',
+  zValidator('param', schema),
+  (c) =&gt; c.json({ id: '1', name: 'Ada' }))
+
+app.get('/openapi.json', (c) =&gt; c.json(...))
+app.get('/docs', swaggerUI({ url: '/openapi.json' }))
+                  </code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="fl-prob-card after p-3">
+                <div class="fl-prob-label">With Fluenth</div>
+                <div class="fl-code-block" style="margin: 0">
+                  <pre
+                    style="padding: 1rem; font-size: 0.79rem; line-height: 1.75"
+                  ><code>import { Hono } from 'hono'
+import { fluenth, route } from 'fluenth'
+import { z } from 'zod'
+
+const app = new Hono()
+
+app.use(fluenth({
+  title: 'API',
+  version: '1.0.0'
+}))
+
+app.get('/users/:id',
+  route()
+    .params(z.object({ id: z.string() }))
+    .response(z.object({
+      id: z.string(),
+      name: z.string()
+    })),
+  (c) =&gt; c.json({ id: '1', name: 'Ada' })
+)
+
+// → /docs   → /openapi.json
+// auto-generated, type-safe, zero glue ✨</code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="features" class="fl-section">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Features</p>
+            <h2 class="fl-section-title">
+              Everything you need. Nothing extra.
+            </h2>
+          </div>
+
+          <div class="fl-feature-grid">
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">⚡</div>
+              <div class="fl-feature-name">Fluent Integration</div>
+              <div class="fl-feature-desc">
+                Chain documentation alongside your route definitions. No context
+                switching.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🦊</div>
+              <div class="fl-feature-name">Hono Native</div>
+              <div class="fl-feature-desc">
+                Built specifically for Hono's router and middleware system.
+                Feels native.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">📄</div>
+              <div class="fl-feature-name">Auto OpenAPI</div>
+              <div class="fl-feature-desc">
+                OpenAPI 3.1 spec generated automatically from your route
+                annotations.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">✂</div>
+              <div class="fl-feature-name">Zero Boilerplate</div>
+              <div class="fl-feature-desc">
+                No registry setup, no schema conversion, no separate docs mount.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">◈</div>
+              <div class="fl-feature-name">Scalar Ready</div>
+              <div class="fl-feature-desc">
+                Ships with first-class Scalar UI integration. Drop-in, beautiful
+                docs.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🔷</div>
+              <div class="fl-feature-name">Type Safe</div>
+              <div class="fl-feature-desc">
+                Full TypeScript support with inferred types from Zod schemas.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">🔌</div>
+              <div class="fl-feature-name">Plug &amp; Play</div>
+              <div class="fl-feature-desc">
+                One middleware call is all you need. Works with existing Hono
+                projects.
+              </div>
+            </div>
+            <div class="fl-feature-cell">
+              <div class="fl-feature-icon">☁</div>
+              <div class="fl-feature-name">Lightweight</div>
+              <div class="fl-feature-desc">
+                Minimal runtime footprint. No heavy dependencies or bundled docs
+                UI bloat.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="documentation-preview" class="fl-section">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Documentation Preview</p>
+            <h2 class="fl-section-title">
+              Beautifully generated API reference
+            </h2>
+            <p class="fl-section-desc">
+              Fluenth generates a fully interactive API reference at
+              <code>/docs</code>
+            </p>
+          </div>
+
+          <div class="fl-docs-preview">
+            <div class="fl-docs-preview-bar">
+              <span class="fl-docs-preview-title"
+                >My API — Scalar UI &nbsp;/docs</span
+              >
+            </div>
+            <div class="fl-docs-preview-body">
+              <div class="fl-docs-preview-sidebar">
+                <div class="section-hd">Endpoints</div>
+                <div class="item active">Users</div>
+                <div class="item">Posts</div>
+                <div class="item">Auth</div>
+                <div class="section-hd">Reference</div>
+                <div class="item">Schemas</div>
+                <div class="item">Security</div>
+              </div>
+              <div class="fl-docs-preview-main">
+                <div style="margin-bottom: 1rem">
+                  <span
+                    style="
+                      font-size: 1.05rem;
+                      font-weight: 600;
+                      color: var(--fg);
+                    "
+                    >Users</span
+                  >
+                  <span class="fl-badge green" style="margin-left: 0.5rem"
+                    >3 endpoints</span
+                  >
+                </div>
+
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">GET</span>
+                  <span class="fl-endpoint-path">/users</span>
+                  <span class="fl-endpoint-desc"
+                    >List all users with pagination</span
+                  >
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">GET</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc">Get a single user by ID</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">POST</span>
+                  <span class="fl-endpoint-path">/users</span>
+                  <span class="fl-endpoint-desc">Create a new user</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">PUT</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc">Update an existing user</span>
+                </div>
+                <div class="fl-api-endpoint">
+                  <span class="fl-method">DELETE</span>
+                  <span class="fl-endpoint-path">/users/:id</span>
+                  <span class="fl-endpoint-desc"
+                    >Delete a user permanently</span
+                  >
+                </div>
+
+                <div style="margin-top: 1.25rem">
+                  <div class="fl-table-wrap">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>In</th>
+                          <th>Type</th>
+                          <th>Required</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><code>id</code></td>
+                          <td><span class="fl-badge blue">path</span></td>
+                          <td><code>string</code></td>
+                          <td><span class="fl-badge green">yes</span></td>
+                          <td>User UUID</td>
+                        </tr>
+                        <tr>
+                          <td><code>include</code></td>
+                          <td><span class="fl-badge mauve">query</span></td>
+                          <td><code>string[]</code></td>
+                          <td><span class="fl-badge yellow">no</span></td>
+                          <td>Relations to include</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="installation" class="fl-section">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Installation</p>
+            <h2 class="fl-section-title">Get started in minutes</h2>
+          </div>
+
+          <div>
+            <div>
+              <p
+                class="text-uppercase"
+                style="
+                  font-size: 0.85rem;
+                  color: var(--fg-subtle);
+                  margin-bottom: 1rem;
+                  font-family: &quot;Maple Mono NF&quot;, monospace;
+                  letter-spacing: 0.06em;
+                "
+              >
+                Install
+              </p>
+              <div class="fl-terminal">
+                <div class="fl-terminal-bar">
+                  <button
+                    class="btn btn-outline-light btn-sm"
+                    style="margin-left: auto"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <div class="fl-terminal-body">
+                  <div>
+                    <span class="prompt">$ </span
+                    ><span class="cmd">npm install fluenth</span>
+                  </div>
+                  <div class="output">&nbsp;</div>
+                  <div class="output">added 3 packages in 1.2s</div>
+                  <div class="output">3 packages are looking for funding</div>
+                  <div class="output">&nbsp;</div>
+                  <div>
+                    <span class="prompt">$ </span
+                    ><span class="cmd">npx fluenth init</span>
+                  </div>
+                  <div class="output">&nbsp;</div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ fluenth.config.ts created
+                  </div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ OpenAPI spec configured
+                  </div>
+                  <div class="output" style="color: var(--green)">
+                    ✓ Scalar UI enabled at /docs
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 flex-wrap mt-1">
+                <div class="fl-terminal" style="flex: 1; min-width: 160px">
+                  <div class="fl-terminal-bar" style="padding: 0.4rem 0.8rem">
+                    <span
+                      style="
+                        font-family: &quot;Maple Mono NF&quot;, monospace;
+                        font-size: 0.68rem;
+                        color: var(--fg-subtle);
+                      "
+                      >pnpm</span
+                    >
+                  </div>
+                  <div
+                    class="fl-terminal-body"
+                    style="padding: 0.6rem 0.8rem; font-size: 0.8rem"
+                  >
+                    <span class="prompt">$ </span
+                    ><span class="cmd">pnpm add fluenth</span>
+                  </div>
+                </div>
+                <div class="fl-terminal" style="flex: 1; min-width: 160px">
+                  <div class="fl-terminal-bar" style="padding: 0.4rem 0.8rem">
+                    <span
+                      style="
+                        font-family: &quot;Maple Mono NF&quot;, monospace;
+                        font-size: 0.68rem;
+                        color: var(--fg-subtle);
+                      "
+                      >bun</span
+                    >
+                  </div>
+                  <div
+                    class="fl-terminal-body"
+                    style="padding: 0.6rem 0.8rem; font-size: 0.8rem"
+                  >
+                    <span class="prompt">$ </span
+                    ><span class="cmd">bun add fluenth</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="community" class="fl-section">
+          <div class="fl-section-header">
+            <p class="fl-section-label">Community</p>
+            <h2 class="fl-section-title">Built in the open</h2>
+            <p class="fl-section-desc">
+              Fluenth is MIT-licensed and developed collaboratively.
+              Contributions welcome.
+            </p>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+            <div class="col">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener"
+                class="fl-community-card d-flex flex-column p-3 text-decoration-none"
+              >
+                <div class="fl-community-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                    />
+                  </svg>
+                </div>
+                <div class="fl-community-name">GitHub</div>
+                <div class="fl-community-desc">
+                  Source code, issues, PRs. Star us if Fluenth helps you.
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a
+                href="https://discord.com"
+                target="_blank"
+                rel="noopener"
+                class="fl-community-card d-flex flex-column p-3 text-decoration-none"
+              >
+                <div class="fl-community-icon">
+                  <i class="bi bi-discord"></i>
+                </div>
+                <div class="fl-community-name">Discord</div>
+                <div class="fl-community-desc">
+                  Join the discussion. Ask questions, share use cases, get help.
+                </div>
+              </a>
+            </div>
+
+            <div class="col">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener"
+                class="fl-community-card d-flex flex-column p-3 text-decoration-none"
+              >
+                <div class="fl-community-icon">
+                  <i class="bi bi-twitter-x"></i>
+                </div>
+                <div class="fl-community-name">Twitter / X</div>
+                <div class="fl-community-desc">
+                  Follow for releases, examples, and dev ecosystem updates.
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="fl-footer">
+      <div class="fl-footer-inner row g-3">
+        <div class="fl-footer-brand col-lg-6 col-md-12">
+          <a href="index.html" class="fl-logo">
+            <img
+              src="./assets/logo.svg"
+              alt="Fluenth logo"
+              class="fl-logo-mark"
+            />
+          </a>
+          <p class="mt-2">
+            The documentation-first companion<br />for Hono. Import, use, docs
+            ready.
+          </p>
+        </div>
+        <div class="fl-footer-col col-lg-2 col-md-4">
+          <h4>Documentation</h4>
+          <ul class="ps-0 list-unstyled">
+            <li><a href="docs/getting-started.html">Getting Started</a></li>
+            <li><a href="docs/installation.html">Installation</a></li>
+            <li><a href="docs/middleware.html">Middleware</a></li>
+            <li><a href="docs/openapi.html">OpenAPI</a></li>
+            <li><a href="docs/scalar-integration.html">Scalar</a></li>
+          </ul>
+        </div>
+        <div class="fl-footer-col col-lg-2 col-md-4">
+          <h4>Reference</h4>
+          <ul class="ps-0 list-unstyled">
+            <li><a href="docs/examples.html">Examples</a></li>
+            <li><a href="docs/architecture.html">Architecture</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">API Reference</a></li>
+          </ul>
+        </div>
+        <div class="fl-footer-col col-lg-2 col-md-4">
+          <h4>Community</h4>
+          <ul class="ps-0 list-unstyled">
+            <li>
+              <a href="https://github.com" target="_blank" rel="noopener"
+                >GitHub</a
+              >
+            </li>
+            <li>
+              <a href="https://discord.com" target="_blank" rel="noopener"
+                >Discord</a
+              >
+            </li>
+            <li>
+              <a href="https://x.com" target="_blank" rel="noopener"
+                >Twitter / X</a
+              >
+            </li>
+            <li><a href="#">Contributing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="fl-footer-bottom d-flex flex-column flex-md-row align-items-center justify-content-between gap-2"
+      >
+        <span>© 2025 Fluenth. MIT License.</span>
+        <span style="color: var(--overlay-0)"
+          >Fluent API docs for Hono — without the boilerplate.</span
+        >
+        <div class="d-flex gap-2">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--fg-subtle)"
+            >GitHub</a
+          >
+          <span style="color: var(--overlay-0)">·</span>
+          <a
+            href="https://discord.com"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--fg-subtle)"
+            >Discord</a
+          >
+          <span style="color: var(--overlay-0)">·</span>
+          <a
+            href="https://x.com"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--fg-subtle)"
+            >X</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

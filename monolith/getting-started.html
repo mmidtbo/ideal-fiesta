@@ -13,18 +13,16 @@
     <link href="css/style.min.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="fl-navbar d-flex align-items-center">
-      <div
-        class="fl-navbar-inner d-flex align-items-center justify-content-between w-100 mx-auto gap-3"
-      >
+    <nav class="fl-navbar">
+      <div class="fl-navbar-inner">
         <a href="../index.html">
           <img src="./assets/logo.svg" alt="logo" class="fl-logo-mark" />
         </a>
-        <ul class="fl-nav-links gap-1 m-0">
+        <ul class="fl-nav-links">
           <li><a href="getting-started.html" class="active">Docs</a></li>
           <li><a href="openapi.html">OpenAPI</a></li>
         </ul>
-        <div class="fl-nav-right d-flex align-items-center flex-shrink-0 gap-2">
+        <div class="fl-nav-right">
           <button
             class="btn btn-outline-light btn-sm"
             id="themeToggle"
@@ -83,7 +81,7 @@
       <div class="fl-content-wrap">
         <article class="fl-content">
           <div class="fl-breadcrumb">
-            <a href="./index.html">fluenth</a>
+            <a href="../index.html">fluenth</a>
             <span class="sep">/</span>
             <span>docs</span>
             <span class="sep">/</span>
@@ -159,9 +157,7 @@
           <p>Now add Fluenth to your app entry point:</p>
 
           <div class="fl-code-block">
-            <div
-              class="fl-code-header d-flex align-items-center justify-content-between"
-            >
+            <div class="fl-code-header">
               <span class="fl-code-filename">src/index.ts</span>
               <div class="d-flex align-items-center gap-2">
                 <span class="fl-code-lang">typescript</span>
@@ -199,6 +195,7 @@ app.get('/users/:id',
             live.
           </p>
 
+          <!-- ── How it works ── -->
           <h2 id="how-it-works">How It Works</h2>
           <p>Fluenth operates in three phases:</p>
 
@@ -234,6 +231,7 @@ app.get('/users/:id',
             </li>
           </ol>
 
+          <!-- ── Prerequisites ── -->
           <h2 id="prerequisites">Prerequisites</h2>
 
           <div class="fl-table-wrap">
@@ -273,6 +271,7 @@ app.get('/users/:id',
             </p>
           </div>
 
+          <!-- ── Next steps ── -->
           <h2 id="next-steps">Next Steps</h2>
           <p>
             Now that you've got the basics down, explore the rest of the
@@ -284,11 +283,23 @@ app.get('/users/:id',
               different environments
             </li>
             <li>
+              <a href="middleware.html">Middleware</a> — all configuration
+              options for <code>fluenth()</code>
+            </li>
+            <li>
               <a href="openapi.html">OpenAPI</a> — advanced schema annotation
               and customization
             </li>
+            <li>
+              <a href="scalar-integration.html">Scalar Integration</a> —
+              customizing the docs UI
+            </li>
+            <li>
+              <a href="examples.html">Examples</a> — real-world usage patterns
+            </li>
           </ul>
 
+          <!-- prev/next -->
           <div class="fl-page-nav">
             <div style="flex: 1"></div>
             <a href="installation.html" class="fl-page-nav-link next">
@@ -298,6 +309,7 @@ app.get('/users/:id',
           </div>
         </article>
 
+        <!-- TOC -->
         <nav class="fl-toc">
           <div class="fl-toc-title">On this page</div>
           <ul class="fl-toc-nav">
