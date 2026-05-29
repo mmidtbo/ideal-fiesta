@@ -6,12 +6,16 @@ export default function initThemeToggle() {
     return;
   }
 
-  const stored = localStorage.getItem("data-theme") || "dark";
-  console.log("stored: ", stored);
-  if (stored === "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    btn.innerHTML = `<i class="bi bi-moon-stars-fill"></i>`;
-  }
+  const stored = localStorage.getItem("data-theme") || "light";
+  console.log(stored);
+
+  html.setAttribute("data-theme", stored);
+  setLogo(stored);
+
+  btn.innerHTML =
+    stored === "dark"
+      ? `<i class="bi bi-moon-stars-fill"></i>`
+      : `<i class="bi bi-sunrise-fill"></i>`;
 
   btn.addEventListener("click", () => {
     const isDark = html.getAttribute("data-theme");
@@ -19,12 +23,27 @@ export default function initThemeToggle() {
     const next = isDark === "dark" ? "light" : "dark";
 
     html.setAttribute("data-theme", next);
+    setLogo(next);
     localStorage.setItem("data-theme", next);
 
     btn.innerHTML =
       next === "dark"
         ? `<i class="bi bi-moon-stars-fill"></i>`
         : `<i class="bi bi-sunrise-fill"></i>`;
+  });
+}
+
+function setLogo(isDark) {
+  console.log("exc");
+  console.log(isDark);
+  const src =
+    isDark === "dark" ? "./assets/logo.svg" : "./assets/logo-light.svg";
+  console.log(src);
+  document.querySelectorAll(".fl-logo-mark").forEach(function (img) {
+    img.src = src;
+  });
+  document.querySelectorAll(".hero-logo").forEach(function (img) {
+    img.src = src;
   });
 }
 
