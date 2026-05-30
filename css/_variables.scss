@@ -45,7 +45,6 @@
   --sidebar-active-text: var(--blue);
   --code-bg: var(--surface-0);
   --code-inline-bg: var(--surface-0);
-
 }
 
 [data-theme="light"] {
@@ -84,8 +83,8 @@
   --fg: var(--text);
   --fg-muted: var(--subtext-0);
   --fg-subtle: var(--overlay-1);
-  --accent: var(--mauve);
-  --accent-alt: var(--blue);
+  --accent: var(--lavender);
+  --accent-alt: var(--lavender);
   --link: var(--blue);
   --link-hover: var(--sapphire);
   --sidebar-bg: var(--mantle);
@@ -94,5 +93,4 @@
   --sidebar-active-text: var(--mauve);
   --code-bg: var(--crust);
   --code-inline-bg: var(--surface-0);
-
 }
