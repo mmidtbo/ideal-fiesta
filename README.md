@@ -75,20 +75,20 @@ Keuntungan:
 
 **SCSS Modular:**
 
-Kenapa SCSS partials?
-Saya sadar diri saya tidak jago styling — kalau semua CSS ditulis dalam satu file, udah mah css debug nya susah , ketambah skill issue 🫨.
+**Kenapa SCSS partials?**
+Saya sadar diri saya tidak jago styling - kalau semua CSS ditulis dalam satu file, udah mah css debug nya susah , ketambah skill issue 🫨.
 
 ![Struktur SCSS modular](./graph.svg)
 
 <h2>Screenshots</h2>
 
-Home
+**Home**
 ![Home](./assets/home.png)
 
-Docs
+**Docs**
 ![Docs](./assets/docs.png)
 
-Installation
+**Installation**
 ![Installation](./assets/installation.png)
 
 ---
