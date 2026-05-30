@@ -71,6 +71,15 @@ Keuntungan:
 
 > **Catatan:** `monolith/` tetap dipertahankan sebagai arsip/cadangan. Semua pengembangan baru dilakukan di `index.html` + `parts/`.
 
+![Struktur SCSS modular](./graph-html.svg)
+
+**SCSS Modular:**
+
+Kenapa SCSS partials?
+Saya sadar diri saya tidak jago styling — kalau semua CSS ditulis dalam satu file, udah mah css debug nya susah , ketambah skill issue 🫨.
+
+![Struktur SCSS modular](./graph.svg)
+
 ---
 
 ## Referensi Desain
@@ -90,7 +99,6 @@ Website ini dikembangkan dengan mempelajari dan mengadaptasi pola desain dari:
 - Konten: Scalar platform → Fluenth specific tool untuk Hono framework
 - Tambah fitur: Theme toggle dengan localStorage persistence
 - Personalisasi: Fokus pada pain point Hono + Zod OpenAPI pipeline
-- Layout: Single-page scroll (bukan multi-page docs)
 
 ### 2. Hono.dev (<https://hono.dev/>)
 

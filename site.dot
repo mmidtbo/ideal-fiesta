@@ -1,0 +1,14 @@
+digraph Website {
+    rankdir=LR;
+
+    "index.html" -> "init.js";
+
+    "init.js" -> "navbar.html";
+    "init.js" -> "hero.html";
+    "init.js" -> "problem.html";
+    "init.js" -> "features.html";
+    "init.js" -> "docs-preview.html";
+    "init.js" -> "installation.html";
+    "init.js" -> "community.html";
+    "init.js" -> "footer.html";
+}
